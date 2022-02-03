@@ -2,8 +2,14 @@ var express = require('express');
 var app = express();
 var fs = require("fs");
 var cors = require('cors')
+var bodyParser = require('body-parser')
 
 app.use(cors());
+
+app.use( bodyParser.json() );       // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+}));
 
 app.get('/api/vehicles', function (req, res) {
    fs.readFile( __dirname + "/" + "vehicles.json", 'utf8', function (err, data) {
@@ -28,11 +34,35 @@ app.get('/api/vehicles/:id', function (req, res) {
 app.post('/api/vehicles', function (req, res) {
    // First read existing vehicles.
    fs.readFile( __dirname + "/" + "vehicles.json", 'utf8', function (err, data) {
-      console.log("req = ", req );
       data = JSON.parse( data );
-      var nextId = Math.max(Object.values(data).map(a => {return a.id})) + 1;
-      data[nextId] = vehicle["vehicle4"];
-      console.log( data );
+
+      var ids = Object.values(data).map(a => {return parseInt(a.id, 10)});
+      var nextId = Math.max(...ids) + 1;
+
+      data[nextId] = req.body;
+
+      fs.writeFileSync('vehicles.json', data);
+
+      res.setHeader('Content-Type', 'application/json');
+      res.send(data);
+   });
+})
+
+app.put('/api/vehicles/:id', function (req, res) {
+   // First read existing vehicles.
+   fs.readFile( __dirname + "/" + "vehicles.json", 'utf8', function (err, data) {
+      data = JSON.parse( data );
+      var record = data[req.params.id];
+
+      if (record) {
+         data[req.params.id] = {
+            ...record,
+            ...req.body
+         };
+      }
+
+      fs.writeFileSync('vehicles.json', data);
+
       res.setHeader('Content-Type', 'application/json');
       res.send(data);
    });
@@ -43,8 +73,8 @@ app.delete('/api/vehicles/:id', function (req, res) {
    fs.readFile( __dirname + "/" + "vehicles.json", 'utf8', function (err, data) {
       data = JSON.parse( data );
       delete data[req.params.id];
-       
-      console.log( data );
+
+      fs.writeFileSync('vehicles.json', data);
       res.setHeader('Content-Type', 'application/json');
       res.send(data);
    });
