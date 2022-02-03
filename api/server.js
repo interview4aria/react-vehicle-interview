@@ -39,9 +39,12 @@ app.post('/api/vehicles', function (req, res) {
       var ids = Object.values(data).map(a => {return parseInt(a.id, 10)});
       var nextId = Math.max(...ids) + 1;
 
-      data[nextId] = req.body;
+      data[nextId] = {
+         id: nextId,
+         ...req.body
+      };
 
-      fs.writeFileSync('vehicles.json', data);
+      fs.writeFileSync('vehicles.json', JSON.stringify(data, null, 2));
 
       res.setHeader('Content-Type', 'application/json');
       res.send(data);
@@ -61,7 +64,7 @@ app.put('/api/vehicles/:id', function (req, res) {
          };
       }
 
-      fs.writeFileSync('vehicles.json', data);
+      fs.writeFileSync('vehicles.json', JSON.stringify(data, null, 2));
 
       res.setHeader('Content-Type', 'application/json');
       res.send(data);
@@ -74,7 +77,7 @@ app.delete('/api/vehicles/:id', function (req, res) {
       data = JSON.parse( data );
       delete data[req.params.id];
 
-      fs.writeFileSync('vehicles.json', data);
+      fs.writeFileSync('vehicles.json', JSON.stringify(data, null, 2));
       res.setHeader('Content-Type', 'application/json');
       res.send(data);
    });
