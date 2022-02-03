@@ -4,9 +4,9 @@
 ## System Requirements
 
 The following software is required to run the application.
-* Node 17.4.0
-* npm 8.4.0
-* Yarn 1.22.17
+- Node 17.4.0
+- npm 8.4.0
+- Yarn 1.22.17
 
 ## Installation
 
@@ -29,16 +29,7 @@ This should make the application available at http://127.0.0.1:3000/.
 
 The application is a small prototype that lists the inventory of exotic vehicles.
 The list page uses an API available at /api/vehicles. There is also a page to
-submit an inquiry at /inquire and an small admin section page to create new
-vehicle records at /admin/vehicle/create. The username is ariauser and the
-password is aria1234.
-
-There are 5 tables Vehicle, Boat, Car, Plane, and SalesPerson. Boat, Car, and
-Plane all have a one-to-one relationship with Vehicle and contain additional
-information for those vehicles based on which type of vehicle it is.
-
-Each vehicle type has its own detail API that returns the specific details of
-the vehicle at /api/boat/vehicle_id, /api/car/vehicle_id, and /api/plane/vehicle_id.
+submit an inquiry at /inquire.
 
 
 ## Requirements
@@ -48,9 +39,40 @@ user story
 
 As a user I want to be able to see the number of people a vehicle can
 carry. In the case of boats and planes this number should contain both passengers
-and crew. For cars it should just be passengers. The /vehicles API should return a
+and crew. For cars it should just be passengers. The `/api/vehicles` API should return a
 new value 'numPeople' that should contain the total for each vehicle. It should then
 be displayed as a column in the table on the main page.
+
+Add the ability to create a new vehicle given post api endpoint `POST: /api/vehicles` and request payload in the following shape:
+```
+{
+    "name": "Example name",
+    "type": "Plane",
+    "color": "Blue",
+    "description": "Example of a description",
+    "price": 99999
+}
+
+```
+
+Add the ability to edit a vehicle given put api endpoint `PUT: /api/vehicles//{vehicle_id}` and request payload in the following shape:
+```
+{
+    "name": "Example name",
+    "type": "Plane",
+    "color": "Blue",
+    "description": "Example of a description",
+    "price": 99999
+}
+```
+
+Also, we have an api endpoint to delete a vehicle, `DELETE: /api/vehicles/{vehicle_id}`.
+Add a delete feature in the vehicle list page to remove vehicles.
+
+
+We have a vehicle detail page API endpoint `GET: /api/vehicles/{vehicle_id}`.
+Make the name of each vehicle name a link in the vehicle list page that take you to a vehicle detail page base on the vehicle type.
+For example, all vehicles that are cars should go to /car/{vehicle_id} and all vehicles that are of type boat should go to `/boat/{vehicle_id}`.
 
 In the demo and meeting we'll also discuss
 
@@ -58,12 +80,6 @@ In the demo and meeting we'll also discuss
 despite working fine in the dev and qa environments. What may be the performance
 issue with this page. Describe or prototype any solutions you could make to this
 application to improve the performance problems.
-
-* A code review needs to be done on some code recently merged to add a new
-vehicle. A copy of the diff from the pull request is in /public/code_review.txt.
-Review the changes for this new feature and describe any performance, quality,
-or security concerns and possible solutions to them.
-
 
 ## Running Tests
 
