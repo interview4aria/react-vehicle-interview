@@ -1,0 +1,109 @@
+{
+  "7": {
+    "id": 7,
+    "name": "Air Force One",
+    "type": "Plane",
+    "color": "White",
+    "description": "Air Force One is the official air traffic control call sign for a United States Air Force aircraft carrying the president of the United States. In common parlance, the term is used to denote U.S. Air Force aircraft modified and used to transport the president.[1] The aircraft are prominent symbols of the American presidency and its power.",
+    "price": 3200000000,
+    "truncDescription": "Air Force One is the official air traffic control call sign for a United States Air Force aircraf...",
+    "formatPrice": "$3,200,000,000.00",
+    "salesPerson": null
+  },
+  "6": {
+    "id": 6,
+    "name": "Al Mirqab",
+    "type": "Boat",
+    "color": "Blue",
+    "description": "Al Mirqab is one of the largest motor yachts ever built. The yacht belongs to Qatar's former Prime Minister and Foreign Minister Hamad bin Jassim bin Jaber Al Thani. The yacht was built at Peters Schiffbau Wewelsfleth yard in Germany.",
+    "price": 250000000,
+    "truncDescription": "Al Mirqab is one of the largest motor yachts ever built. The yacht belongs to Qatar's former Prim...",
+    "formatPrice": "$250,000,000.00",
+    "salesPerson": {
+      "id": 2,
+      "name": "Stew Isakov",
+      "email": "isakov@luxuryvehicles.com",
+      "phone": "555-1211"
+    }
+  },
+  "3": {
+    "id": 3,
+    "name": "Batmobile",
+    "type": "Car",
+    "color": "Black",
+    "description": "The Batmobile is the fictional car driven by the superhero Batman. Housed in the Batcave, which it accesses through a hidden entrance, the Batmobile is both a heavily armored tactical assault vehicle and a personalized custom-built pursuit and capture vehicle that is used by Batman in his fight against crime.",
+    "price": 620000,
+    "truncDescription": "The Batmobile is the fictional car driven by the superhero Batman. Housed in the Batcave, which i...",
+    "formatPrice": "$620,000.00",
+    "salesPerson": {
+      "id": 2,
+      "name": "Stew Isakov",
+      "email": "isakov@luxuryvehicles.com",
+      "phone": "555-1211"
+    }
+  },
+  "4": {
+    "id": 4,
+    "name": "Bullitt",
+    "type": "Car",
+    "color": "Gray",
+    "description": "The 1968 Ford Mustang GT driven by Steve McQueen in the 1968 film \"Bullitt\" just auctioned off for $3.74 million. It is now considered the most valuable Ford Mustang in the world, according to the auction house that sold the car, Mecum Auctions.",
+    "price": 3700000,
+    "truncDescription": "The 1968 Ford Mustang GT driven by Steve McQueen in the 1968 film \"Bullitt\" just auctioned off fo...",
+    "formatPrice": "$3,700,000.00",
+    "salesPerson": {
+      "id": 2,
+      "name": "Stew Isakov",
+      "email": "isakov@luxuryvehicles.com",
+      "phone": "555-1211"
+    }
+  },
+  "5": {
+    "id": 5,
+    "name": "Dilbar",
+    "type": "Boat",
+    "color": "White",
+    "description": "Dilbar is a super-yacht launched on 14 November 2015 at the German Lürssen shipyard and delivered in 2016. It was built as Project Omar. The interior design of Dilbar was designed by Andrew Winch and the exterior by Espen Oeino. As of 2020, Dilbar is the sixth longest yacht in the world.",
+    "price": 1000000000,
+    "truncDescription": "Dilbar is a super-yacht launched on 14 November 2015 at the German Lürssen shipyard and delivere...",
+    "formatPrice": "$1,000,000,000.00",
+    "salesPerson": {
+      "id": 1,
+      "name": "Doug Muldoon",
+      "email": "dmuldoon@yachtsyachtyachts.com",
+      "phone": "555-1231"
+    }
+  },
+  "1": {
+    "id": 1,
+    "name": "Enola Gay",
+    "type": "Plane",
+    "color": "Silver",
+    "description": "The Enola Gay is a Boeing B-29 Superfortress bomber, named after Enola Gay Tibbets, the mother of the pilot, Colonel Paul Tibbets. On 6 August 1945, piloted by Tibbets and Robert A. Lewis during the final stages of World War II, it became the first aircraft to drop an atomic bomb.",
+    "price": 1231881,
+    "truncDescription": "The Enola Gay is a Boeing B-29 Superfortress bomber, named after Enola Gay Tibbets, the mother of...",
+    "formatPrice": "$1,231,881.00",
+    "salesPerson": {
+      "id": 1,
+      "name": "Doug Muldoon",
+      "email": "dmuldoon@yachtsyachtyachts.com",
+      "phone": "555-1231"
+    }
+  },
+  "2": {
+    "id": 2,
+    "name": "Spirit of St. Louis",
+    "type": "Plane",
+    "color": "Gray",
+    "description": "Louis is the custom-built, single-engine, single-seat, high-wing monoplane that was flown by Charles Lindbergh on May 20–21, 1927, on the first solo nonstop transatlantic flight from Long Island, New York, to Paris, France, for which Lindbergh won the $25,000 Orteig Prize.",
+    "price": 1383020,
+    "truncDescription": "Louis is the custom-built, single-engine, single-seat, high-wing monoplane that was flown by Char...",
+    "formatPrice": "$1,383,020.00",
+    "salesPerson": {
+      "id": 1,
+      "name": "Doug Muldoon",
+      "email": "dmuldoon@yachtsyachtyachts.com",
+      "phone": "555-1231"
+    }
+  }
+}
