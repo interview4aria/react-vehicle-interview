@@ -4,9 +4,10 @@
 ## System Requirements
 
 The following software is required to run the application.
-- Node 17.4.0
-- npm 8.4.0
-- Yarn 1.22.17
+
+* Node 17.4.0
+* npm 8.4.0
+* Yarn 1.22.17
 
 ## Installation
 
@@ -16,7 +17,7 @@ Clone the repository locally, cd in the directory and issue the following comman
 ## Starting Local API
 
 Navigate to the `/api/` directory and issue the following command `node server.js`
-The API will be accession here http://localhost:8081/api/vehicles
+The API will be accessible here http://localhost:8081/api/vehicles
 
 ## Starking the Local React UI APP
 
@@ -28,7 +29,7 @@ This should make the application available at http://127.0.0.1:3000/.
 ## Application Description
 
 The application is a small prototype that lists the inventory of exotic vehicles.
-The list page uses an API available at /api/vehicles. There is also a page to
+The list page uses an API available at `/api/vehicles`. There is also a page to
 submit an inquiry at /inquire.
 
 
@@ -71,15 +72,8 @@ Add a delete feature in the vehicle list page to remove vehicles.
 
 
 We have a vehicle detail page API endpoint `GET: /api/vehicles/{vehicle_id}`.
-Make the name of each vehicle name a link in the vehicle list page that take you to a vehicle detail page base on the vehicle type.
-For example, all vehicles that are cars should go to /car/{vehicle_id} and all vehicles that are of type boat should go to `/boat/{vehicle_id}`.
-
-In the demo and meeting we'll also discuss
-
-* In our production environment the inquiry page is loading extremely slow
-despite working fine in the dev and qa environments. What may be the performance
-issue with this page. Describe or prototype any solutions you could make to this
-application to improve the performance problems.
+Make the name of each vehicle a link in the vehicle list page that take you to a vehicle detail page base on the vehicle type.
+For example, all vehicles that are cars should go to /cars/{vehicle_id} and all vehicles that are of type boat should go to `/boats/{vehicle_id}`.
 
 ## Running Tests
 
